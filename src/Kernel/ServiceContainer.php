@@ -2,6 +2,7 @@
 
 namespace Luozhenyu\JinRiTeMai\Kernel;
 
+use Luozhenyu\JinRiTeMai\Kernel\Exception\JinRiTeMaiException;
 use Pimple\Container;
 
 class ServiceContainer extends Container
@@ -26,11 +27,15 @@ class ServiceContainer extends Container
      * @param string $appKey
      * @param string $appSecret
      * @param array $config
+     * @throws JinRiTeMaiException
      */
-    public function __construct(string $appKey, string $appSecret, array $config = [])
+    public function __construct($appKey, $appSecret, array $config = [])
     {
         parent::__construct();
         $this->registerProviders($this->getProviders());
+        if (is_null($appKey) || is_null($appSecret)) {
+            throw new JinRiTeMaiException('Please config app key and secret');
+        }
         $this->userConfig = array_merge(compact('appKey', 'appSecret'), $config);
     }
 
