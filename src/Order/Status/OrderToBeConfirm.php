@@ -3,6 +3,10 @@
 namespace Luozhenyu\JinRiTeMai\Order\Status;
 
 
+/**
+ * Class OrderToBeConfirm
+ * @package Luozhenyu\JinRiTeMai\Order\Status
+ */
 class OrderToBeConfirm extends BaseStatus
 {
     /**

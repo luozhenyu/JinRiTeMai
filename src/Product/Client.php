@@ -5,6 +5,10 @@ namespace Luozhenyu\JinRiTeMai\Product;
 
 use Luozhenyu\JinRiTeMai\Kernel\BaseClient;
 
+/**
+ * Class Client
+ * @package Luozhenyu\JinRiTeMai\Product
+ */
 class Client extends BaseClient
 {
     /**

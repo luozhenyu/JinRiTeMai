@@ -5,6 +5,10 @@ namespace Luozhenyu\JinRiTeMai\Kernel;
 use Luozhenyu\JinRiTeMai\Kernel\Exception\JinRiTeMaiException;
 use Pimple\Container;
 
+/**
+ * Class ServiceContainer
+ * @package Luozhenyu\JinRiTeMai\Kernel
+ */
 class ServiceContainer extends Container
 {
     /**

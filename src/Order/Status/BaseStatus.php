@@ -3,6 +3,10 @@
 namespace Luozhenyu\JinRiTeMai\Order\Status;
 
 
+/**
+ * Class BaseStatus
+ * @package Luozhenyu\JinRiTeMai\Order\Status
+ */
 abstract class BaseStatus
 {
     /**

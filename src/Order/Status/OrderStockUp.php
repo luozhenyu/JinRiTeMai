@@ -3,6 +3,10 @@
 namespace Luozhenyu\JinRiTeMai\Order\Status;
 
 
+/**
+ * Class OrderStockUp
+ * @package Luozhenyu\JinRiTeMai\Order\Status
+ */
 class OrderStockUp extends BaseStatus
 {
     /**

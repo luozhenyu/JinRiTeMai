@@ -40,6 +40,7 @@ class Application extends ServiceContainer
      * @param string $appSecret
      * @param array $config
      * @return Application
+     * @throws Kernel\Exception\JinRiTeMaiException
      */
     public static function make(string $appKey, string $appSecret, array $config = [])
     {
