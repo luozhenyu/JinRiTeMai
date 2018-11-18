@@ -1,0 +1,36 @@
+{
+    "name": "luozhenyu/jinritemai",
+    "description": "今日特卖放心购SDK",
+    "keywords": [
+        "wechat",
+        "weixin",
+        "weixin-sdk",
+        "sdk"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "luozhenyu",
+            "email": "lzy@luozy.cn"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "pimple/pimple": "^3.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "nesbot/carbon": "^2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Luozhenyu\\JinRiTeMai\\": "src/"
+        },
+        "files": [
+            "src/Helpers.php"
+        ]
+    }
+}
