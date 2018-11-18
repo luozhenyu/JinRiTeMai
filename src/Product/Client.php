@@ -49,4 +49,23 @@ class Client extends BaseClient
         return $this->httpGet('product/list', $query);
     }
 
+    /**
+     * @param string|null $product_id
+     * @param string|null $out_product_id
+     * @return array
+     */
+    public function detail($product_id = null, $out_product_id = null)
+    {
+        $query = [];
+
+        if (!is_null($product_id)) {
+            $query['product_id'] = $product_id;
+        }
+
+        if (!is_null($out_product_id)) {
+            $query['ut_product_id'] = $out_product_id;
+        }
+
+        return $this->httpGet('product/detail', $query);
+    }
 }
