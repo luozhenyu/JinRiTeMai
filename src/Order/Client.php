@@ -5,7 +5,6 @@ namespace Luozhenyu\JinRiTeMai\Order;
 
 use Carbon\Carbon;
 use Luozhenyu\JinRiTeMai\Kernel\BaseClient;
-use Luozhenyu\JinRiTeMai\Order\Status\BaseStatus;
 
 /**
  * Class Client
@@ -21,7 +20,7 @@ class Client extends BaseClient
     protected $name = 'product';
 
     /**
-     * @param BaseStatus|null $order_status
+     * @param int|null $order_status
      * @param Carbon|null $start_time
      * @param Carbon|null $end_time
      * @param string $order_by
@@ -29,6 +28,8 @@ class Client extends BaseClient
      * @param int $page
      * @param int $size
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function list(
         $order_status = null,
@@ -45,7 +46,7 @@ class Client extends BaseClient
         $query['page'] = $page;
         $query['size'] = $size;
         if (!is_null($order_status)) {
-            $query['order_status'] = $order_status->getCode();
+            $query['order_status'] = $order_status;
         }
 
         if (!is_null($start_time)) {
@@ -61,6 +62,8 @@ class Client extends BaseClient
     /**
      * @param string $order_id
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function detail(string $order_id)
     {
@@ -69,6 +72,8 @@ class Client extends BaseClient
 
     /**
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function logisticsCompanyList()
     {
@@ -78,6 +83,8 @@ class Client extends BaseClient
     /**
      * @param string $order_id
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function stockUp(string $order_id)
     {
@@ -92,6 +99,8 @@ class Client extends BaseClient
      * @param string|null $post_from
      * @param string|null $post_addr
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function logisticsAdd(
         string $order_id,
@@ -127,6 +136,8 @@ class Client extends BaseClient
      * @param string|null $post_from
      * @param string|null $post_addr
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function logisticsEdit(
         string $order_id,

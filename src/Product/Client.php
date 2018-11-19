@@ -22,6 +22,8 @@ class Client extends BaseClient
     /**
      * @param int $cid
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function getGoodsCategory(int $cid = 0)
     {
@@ -33,6 +35,8 @@ class Client extends BaseClient
      * @param int $size
      * @param int|null $status
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function list(
         int $page = 0,
@@ -53,6 +57,8 @@ class Client extends BaseClient
      * @param string|null $product_id
      * @param string|null $out_product_id
      * @return array
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
+     * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function detail($product_id = null, $out_product_id = null)
     {

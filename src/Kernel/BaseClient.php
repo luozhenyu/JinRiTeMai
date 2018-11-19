@@ -52,6 +52,8 @@ abstract class BaseClient
      * @param string $path
      * @param array $query
      * @return array
+     * @throws HttpRequestException
+     * @throws JsonException
      */
     public function httpGet(string $path, array $query = [])
     {
@@ -70,6 +72,7 @@ abstract class BaseClient
     /**
      * @param array $arr
      * @return string
+     * @throws JsonException
      */
     protected function buildParameterJson(array $arr)
     {
@@ -115,6 +118,7 @@ abstract class BaseClient
      * @param string $method
      * @param array $options
      * @return array
+     * @throws HttpRequestException
      */
     public function request($url, $method = 'GET', array $options = [])
     {
