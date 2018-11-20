@@ -76,7 +76,7 @@ abstract class BaseClient
      */
     protected function buildParameterJson(array $arr)
     {
-        if (!$result = json_encode($this->sortByKey($arr), JSON_FORCE_OBJECT)) {
+        if (!$result = json_encode($this->sortByKey($arr), JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE)) {
             throw new JsonException;
         }
         return $result;
