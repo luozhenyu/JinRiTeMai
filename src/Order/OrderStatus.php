@@ -19,7 +19,7 @@ class OrderStatus
     /**
      * @var array
      */
-    protected $annotations = [
+    private static $annotations = [
         0 => '开始',
         1 => '待确认',
         2 => '备货中',
@@ -51,8 +51,8 @@ class OrderStatus
      * @param int $code
      * @return string
      */
-    public function getMessage(int $code): string
+    public static function getMessage(int $code): string
     {
-        return isset($this->annotations[$code]) ? $this->annotations[$code] : null;
+        return static::$annotations[$code] ?? '';
     }
 }

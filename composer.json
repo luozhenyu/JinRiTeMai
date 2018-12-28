@@ -27,9 +27,6 @@
     "autoload": {
         "psr-4": {
             "Luozhenyu\\JinRiTeMai\\": "src/"
-        },
-        "files": [
-            "src/Helpers.php"
-        ]
+        }
     }
 }
