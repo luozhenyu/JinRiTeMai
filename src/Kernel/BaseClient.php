@@ -76,7 +76,7 @@ abstract class BaseClient
      */
     protected function buildParameterJson(array $arr)
     {
-        if (!$result = json_encode($this->sortByKey($arr), JSON_FORCE_OBJECT|JSON_UNESCAPED_UNICODE)) {
+        if (!$result = json_encode($this->sortByKey($arr), JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE)) {
             throw new JsonException;
         }
         return $result;
@@ -134,10 +134,10 @@ abstract class BaseClient
         }
         $responseArray = json_decode($response->getBody(), true);
 
-        $err_no = $responseArray['err_no'];
+        $errno = $responseArray['err_no'] ?? $responseArray['errno'] ?? 0;
         $message = $responseArray['message'];
-        if ($err_no !== 0) {
-            throw new HttpRequestException($message, $err_no);
+        if ($errno !== 0) {
+            throw new HttpRequestException($message, $errno);
         }
 
         return $responseArray['data'];
