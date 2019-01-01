@@ -61,13 +61,13 @@ class Client extends BaseClient
 
     /**
      * @param string $order_id
-     * @return array
+     * @return array|null
      * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\HttpRequestException
      * @throws \Luozhenyu\JinRiTeMai\Kernel\Exception\JsonException
      */
     public function detail(string $order_id)
     {
-        return $this->httpGet('order/detail', compact('order_id'));
+        return $this->httpGet('order/detail', compact('order_id'))['list'][0] ?? null;
     }
 
     /**

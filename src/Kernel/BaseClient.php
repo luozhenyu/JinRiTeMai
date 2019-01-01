@@ -140,7 +140,7 @@ abstract class BaseClient
             throw new HttpRequestException($message, $errno);
         }
 
-        return $responseArray['data'];
+        return $responseArray['data'] ?? [];
     }
 
     /**
