@@ -4,7 +4,7 @@ namespace Luozhenyu\JinRiTeMai\Order;
 
 
 /**
- * Class ProductStatus
+ * Class OrderStatus
  * @package Luozhenyu\JinRiTeMai\Order
  */
 class OrderStatus

@@ -1,23 +1,25 @@
 <?php
 
-namespace Luozhenyu\JinRiTeMai\Product;
+namespace Luozhenyu\JinRiTeMai\Order;
 
 
 /**
- * Class ProductStatus
- * @package Luozhenyu\JinRiTeMai\Product
+ * Class PayStatus
+ * @package Luozhenyu\JinRiTeMai\Order
  */
-class ProductStatus
+class PayStatus
 {
-    const PutOn = 0;
-    const PutOff = 1;
+    const CashOnDelivery = 0;
+    const WeChatPay = 1;
+    const AliPay = 2;
 
     /**
      * @var array
      */
     private static $annotations = [
-        0 => '上架',
-        1 => '下架',
+        0 => '货到付款',
+        1 => '微信',
+        2 => '支付宝',
     ];
 
     /**
